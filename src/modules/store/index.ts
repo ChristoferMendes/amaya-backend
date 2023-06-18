@@ -1,7 +1,4 @@
-import { StoreUser, User } from "./types";
-import { readFileSync, writeFileSync } from "fs";
-import { join } from "path";
-import { exec } from "child_process";
+import { User } from "./types";
 import { prisma } from "../../../prisma/prisma";
 
 class Store {
