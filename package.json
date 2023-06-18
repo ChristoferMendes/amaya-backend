@@ -1,0 +1,17 @@
+{
+  "name": "back",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "@fastify/type-provider-typebox": "^3.2.0",
+    "@sinclair/typebox": "^0.28.14",
+    "fastify": "^4.17.0"
+  },
+  "scripts": {
+    "dev": "tsx src/server.ts"
+  },
+  "devDependencies": {
+    "@types/node": "^20.2.5"
+  }
+}
