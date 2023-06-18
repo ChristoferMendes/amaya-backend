@@ -25,7 +25,7 @@ app.post<{ Body: UserType }>(
     if (!data) {
       return reply
         .status(409)
-        .send({ message: "User already exists", type: "email" });
+        .send({ message: "User already exists", type: "email", debug: data });
     }
 
     return data;
