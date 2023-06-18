@@ -1,7 +1,8 @@
 module.exports = {
     // ... outras configurações ...
     ignoreAllExtensions: true,
-    ignore: ['/src/modules/store/data/data.json']
+    ignore: ['node_modules'],
+    
     // ... outras configurações ...
   };
   
