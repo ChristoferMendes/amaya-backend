@@ -1,9 +1,10 @@
 import { StoreUser, User } from "./types";
 import { readFileSync, writeFileSync } from "fs";
 import { join } from "path";
+import { exec } from "child_process";
 
 class Store {
-  readonly FILE = join(__dirname, "data", "data.json");
+  readonly FILE = "./data/data.json";
 
   create(user: User) {
     const existentUsers = this.read();
