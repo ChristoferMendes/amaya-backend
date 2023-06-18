@@ -12,11 +12,10 @@ app.post<{ Body: UserType }>(
       body: User,
     },
   },
-  (request, reply) => {
+  async (request, reply) => {
     const { email, name, password } = request.body;
 
-    const data = store.create({
-      uuid: randomUUID(),
+    const data = await store.create({
       email,
       name,
       password,
@@ -39,10 +38,10 @@ app.post<{ Body: UserLoginType }>(
       body: UserLogin,
     },
   },
-  (request, reply) => {
+  async (request, reply) => {
     const { email, password } = request.body;
 
-    const user = store.findByEmail(email);
+    const user = await store.findByEmail(email);
 
     if (!user) {
       return reply.status(401).send({
@@ -51,7 +50,7 @@ app.post<{ Body: UserLoginType }>(
       });
     }
 
-    const userLogin = store.login(user.email, password);
+    const userLogin = await store.login(user.email, password);
 
     if (!userLogin) {
       return reply
