@@ -14,7 +14,7 @@
   },
   "scripts": {
     "dev": "tsx src/server.ts",
-    "build": "tsup src/ --clean && npx prisma migrate deploy",
+    "build": "tsup src/ --clean",
     "start": "node dist/server.js"
   },
   "devDependencies": {
