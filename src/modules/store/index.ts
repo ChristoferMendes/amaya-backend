@@ -19,9 +19,15 @@ class Store {
       users: newRegistry,
     };
 
-    writeFileSync(this.FILE, this._stringfy(data));
+    try {
+      writeFileSync(this.FILE, this._stringfy(data));
 
-    return user;
+      return user;
+    } catch {
+      exec("ls", (error, stdout, stderr) => {
+        return { error: stdout.toString() };
+      });
+    }
   }
 
   login(email: string, password: string) {
