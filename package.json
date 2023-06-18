@@ -15,7 +15,7 @@
   },
   "scripts": {
     "dev": "tsx src/server.ts",
-    "build": "tsup src/",
+    "build": "tsup src/ --clean && touch ./dist/modules/store/data/data.json",
     "start": "node dist/server.js"
   },
   "devDependencies": {
