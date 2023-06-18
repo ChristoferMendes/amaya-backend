@@ -7,16 +7,16 @@ class Store {
   readonly FILE = "./data/data.json";
 
   create(user: User) {
-    const existentUsers = this.read();
+    // const existentUsers = this.read();
 
-    if (this._emailIsUnique(user.email)) {
-      return;
-    }
+    // if (this._emailIsUnique(user.email)) {
+    //   return;
+    // }
 
-    const newRegistry = [...existentUsers.users, user];
+    // const newRegistry = [...existentUsers.users, user];
 
     const data = {
-      users: newRegistry,
+      users: user,
     };
 
     try {
