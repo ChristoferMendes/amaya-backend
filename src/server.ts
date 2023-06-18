@@ -1,6 +1,5 @@
 import { fastify } from "fastify";
 import { store } from "./modules/store";
-import { randomUUID } from "crypto";
 import { User, UserLogin, UserLoginType, UserType } from "./schemas";
 
 const app = fastify();
