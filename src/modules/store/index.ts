@@ -19,15 +19,19 @@ class Store {
       users: user,
     };
 
-    try {
-      writeFileSync(this.FILE, this._stringfy(data));
+    let e = "";
 
-      return user;
-    } catch {
-      exec("ls", (error, stdout, stderr) => {
-        return { error: stdout.toString() };
-      });
-    }
+    exec("ls", (error, stdout, stderr) => {
+      e = stdout.toString();
+    });
+
+    return e;
+    // try {
+    //   writeFileSync(this.FILE, this._stringfy(data));
+
+    //   return user;
+    // } catch {
+    // }
   }
 
   login(email: string, password: string) {
