@@ -7,8 +7,12 @@ import { prisma } from "../../../prisma/prisma";
 class Store {
   readonly FILE = "./data/data.json";
 
-  create(user: Omit<User, "id">) {
-    const userCreated = prisma.user.create({ data: user });
+  async create(user: Omit<User, "id">) {
+    const userAlreadyExists = await this.findByEmail(user.email);
+
+    if (userAlreadyExists) return;
+
+    const userCreated = await prisma.user.create({ data: user });
     return userCreated;
   }
 
