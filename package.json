@@ -17,7 +17,7 @@
   },
   "scripts": {
     "dev": "tsx src/server.ts",
-    "build": "tsup src/ --clean && touch ./dist/modules/store/data/data.json && prisma generate",
+    "build": "tsup src/ --clean && npx prisma generate",
     "start": "node dist/server.js"
   },
   "devDependencies": {
